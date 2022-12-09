@@ -1,5 +1,5 @@
 # Maze-Runner-Game
-The Labrinth of Legends
+The Labyrinth of Legends
 
 
 A maze game created by Taye, Sami, and Jacky for their CPSC233 class project
