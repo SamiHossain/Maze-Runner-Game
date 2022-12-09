@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<StackPane prefHeight="808.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GUIAnimationAppController">
+   <children>
+      <GridPane fx:id="mainMenuWindow" style="-fx-border-color: Gold; -fx-border-width: 5; -fx-background-color: Black;">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" prefHeight="240.0" prefWidth="1080.0" text="Labyrinth of Legends" textFill="#eeba2a">
+               <font>
+                  <Font name="Colonna MT" size="96.0" />
+               </font>
+            </Label>
+            <Button fx:id="instructionsButton" mnemonicParsing="false" onAction="#viewInstructions" prefHeight="88.0" prefWidth="342.0" style="-fx-background-color: Gold;" text="INSTRUCTIONS" underline="true" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Colonna MT" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="startGameButton" mnemonicParsing="false" onAction="#initializeGame" prefHeight="88.0" prefWidth="342.0" style="-fx-background-color: Gold;" text="START GAME" underline="true" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Colonna MT" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="creditsButton" mnemonicParsing="false" onAction="#goToCredits" prefHeight="88.0" prefWidth="342.0" style="-fx-background-color: Gold;" text="CREDITS" underline="true" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Colonna MT" size="39.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <ColorAdjust saturation="-0.14" />
+         </effect>
+      </GridPane>
+      <VBox fx:id="instructionsWindow" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: Black; -fx-border-width: 5; -fx-border-color: Gold;" visible="false" StackPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="994.0" text="Welcome to Labyrinth of Legends where you are mysteriously thrown into the depths of a labyrinth." textFill="#eeba2a">
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Colonna MT" size="22.0" />
+               </font>
+            </Label>
+            <Label text="Your goal is to reach the goal to escape. However, it is a labyrinth after all, " textFill="#eeba2a">
+               <font>
+                  <Font name="Colonna MT" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="and that means that there are riches to be had. " textFill="#eeba2a">
+               <font>
+                  <Font name="Colonna MT" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER" text="Use the WASD keys to navigate the labyrinth." textAlignment="CENTER" textFill="#eeba2a">
+               <font>
+                  <Font name="Colonna MT" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="If you see anything that might be of interest, move your character overtop of it to interact with it." textFill="#eeba2a">
+               <font>
+                  <Font name="Colonna MT" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Otherwise, travel safely and let's hope you make it out alive..." textFill="#eeba2a">
+               <font>
+                  <Font name="Colonna MT" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="returnToMenuButton" mnemonicParsing="false" onAction="#returnToMenu" style="-fx-background-color: Gold;" text="RETURN TO MENU">
+                     <font>
+                        <Font name="Colonna MT" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="startGameButton" mnemonicParsing="false" onAction="#initializeGame" style="-fx-background-color: Gold;" text="START GAME">
+                     <font>
+                        <Font name="Colonna MT" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+      </VBox>
+      <VBox fx:id="creditsWindow" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: Turquoise;" visible="false">
+         <children>
+            <Label prefHeight="31.0" prefWidth="882.0" text="Labyrinth of Legends created by Jacky Tran, Sami Muntakim, and Taye Louie (Group 13)">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="For CPSC 233 Summer 2021 under the guidance of Dr. Nathalie Verwaal ">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="and Soroush Aali Bagi ">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label text="At the University of Calgary, Calgary, Alberta, Canada.">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Characters and monsters loosely based off the Greek Myth of Theseus,">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="the Athenian hero-king and founder and the Minotaur at the Labyrinth of Daedalus. ">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="THANK YOU FOR PLAYING!">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="returnToMenuButton" mnemonicParsing="false" onAction="#returnToMenu" text="RETURN TO MENU">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="startGameButton" mnemonicParsing="false" onAction="#initializeGame" text="START GAME">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <BorderPane fx:id="gameWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="811.0" prefWidth="1080.0" visible="false">
+         <bottom>
+            <AnchorPane minWidth="-Infinity" prefHeight="160.0" prefWidth="1070.0" style="-fx-background-color: Black; -fx-border-color: #eeba2a; -fx-border-width: 5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="textInterface" alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" prefHeight="88.0" prefWidth="1080.0" textAlignment="CENTER" textFill="#eeba2a">
+                     <font>
+                        <Font name="Colonna MT" size="18.0" />
+                     </font></Label>
+                  <Label layoutX="14.0" layoutY="123.0" text="Coin pouch:" textFill="#eeba2a">
+                     <font>
+                        <Font name="Colonna MT" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="867.0" layoutY="123.0" text="Moves: " textFill="#eeba2a">
+                     <font>
+                        <Font name="Colonna MT" size="28.0" />
+                     </font>
+                  </Label>
+                  <Line endX="540.0" layoutX="540.0" layoutY="89.0" startX="-540.0" stroke="#eeba2a" strokeWidth="3.0" />
+                  <Label layoutX="505.0" layoutY="88.0" text="Inventory" textFill="#eeba2a">
+                     <font>
+                        <Font name="Colonna MT" size="20.0" />
+                     </font>
+                  </Label>
+                  <Line endX="540.0" layoutX="540.0" startX="-540.0" strokeWidth="3.0" />
+                  <Line endX="15.0" layoutX="902.0" layoutY="149.0" rotate="90.0" startX="-110.0" stroke="#eeba2a" strokeWidth="3.0" AnchorPane.bottomAnchor="59.5" AnchorPane.topAnchor="147.5" />
+                  <Label fx:id="coinBox" layoutX="162.0" layoutY="122.0" text="0" textFill="#eeba2a">
+                     <font>
+                        <Font name="Colonna MT" size="30.0" />
+                     </font>
+                  </Label>
+                  <GridPane fx:id="inventorySword" alignment="CENTER" layoutX="439.0" layoutY="105.0" prefHeight="88.0" prefWidth="205.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+                  <Label fx:id="moveCounterLabel" layoutX="960.0" layoutY="122.0" text="0" textFill="#eeba2a">
+                     <font>
+                        <Font name="Colonna MT" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </bottom>
+         <top>
+            <AnchorPane prefHeight="53.0" prefWidth="1080.0" style="-fx-background-color: Black; -fx-border-color: #eeba2a; -fx-border-width: 5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="TOP" layoutX="317.0" layoutY="-1.0" prefHeight="32.0" prefWidth="446.0" text="Labyrinth of Legends" textFill="#eeba2a">
+                     <font>
+                        <Font name="Colonna MT" size="45.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="returnToMenuButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToMenu" style="-fx-background-color: Gold;" text="RETURN TO MENU">
+                     <font>
+                        <Font name="Colonna MT" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <StackPane>
+               <children>
+                  <GridPane fx:id="newGrid" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+                  <AnchorPane fx:id="combatWindow" prefHeight="537.0" prefWidth="1080.0" style="-fx-background-color: Grey; -fx-border-color: #eeba2a; -fx-border-width: 5;" visible="false">
+                     <children>
+                        <Circle fill="#2e2c2a" layoutX="294.0" layoutY="469.0" radius="151.0" scaleY="0.2" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="#2e2c2a" layoutX="789.0" layoutY="469.0" radius="158.0" scaleY="0.2" stroke="BLACK" strokeType="INSIDE" />
+                        <ImageView fx:id="combatPlayer" fitHeight="349.0" fitWidth="252.0" layoutX="168.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="combatMinotaur" fitHeight="423.0" fitWidth="464.0" layoutX="510.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="combatInterface" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="521.0" prefHeight="125.0" prefWidth="1061.0" style="-fx-background-color: Black; -fx-border-color: #eeba2a; -fx-border-width: 5;" textFill="#eeba2a">
+                           <font>
+                              <Font name="Colonna MT" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
